@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup</title>
+    <style>
+        /* Full-page background setup */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url(/static/i1.png);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Background overlay for subtle dimming effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Slight dimming */
+            z-index: -1;
+        }
+
+        /* Glassmorphic signup container */
+        .glass-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .glass-container h2 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        input:focus {
+            border: 1px solid #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Checkbox grid layout */
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .checkbox-group label {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            color: white;
+        }
+
+        .checkbox-group label:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Resume upload styling */
+        .file-input {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .file-input label {
+            cursor: pointer;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            border-radius: 5px;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .file-input label:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Submit button */
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(0, 123, 255, 0.6);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: rgba(0, 91, 187, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-container">
+        <h2>Student Signup</h2>
+        <form action="/create_student_acc" method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="phone" placeholder="Phone" required>
+            <input type="text" name="institute" placeholder="Institute" required>
+            <input type="text" name="skills" placeholder="Skills" required>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="interest" value="Cyber"> Cyber</label>
+                <label><input type="checkbox" name="interest" value="Financial"> Financial</label>
+                <label><input type="checkbox" name="interest" value="Backend"> Backend</label>
+                <label><input type="checkbox" name="interest" value="ML/AI"> ML/AI</label>
+            </div>
+
+            <input type="text" name="experience" placeholder="Experience" required>
+            <input type="text" name="location" placeholder="Location" required>
+
+            <div class="file-input">
+                <label for="resume">Upload Resume</label>
+                <input type="file" id="resume" name="resume">
+            </div>
+
+            <button type="submit">Join</button>
+        </form>
+    </div>
+</body>
+</html>
