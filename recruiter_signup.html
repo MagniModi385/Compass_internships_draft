@@ -4,71 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compass: Navigate Your Future</title>
+    <title>Recruiter Signup | Compass</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
         body {
-            font-family: "Poppins", sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            position: relative;
             background-image: url(/static/i1.png);
             background-size: cover;
             background-position: center;
         }
 
-        /* Frosted Glass Effect */
         .glass-container {
-            width: 400px;
-            padding: 40px;
+            font-family: "Poppins", sans-serif;
+            width: 650px; /* Increased width */
+            padding: 30px;
             text-align: center;
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(35px);
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
         }
 
         .title {
             font-family: "Anton", sans-serif;
-            font-size: 60px;
+            font-size: 42px;
             color: #1520a6;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         form {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1px;
+        }
+
+        .form-group {
+            width: 48%; /* Two fields per row */
+            display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 15px;
+        }
+
+        .full-width {
+            width: 100%; /* Full-width for file input and button */
         }
 
         label {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
             color: white;
+            margin-bottom: 4px;
+            text-align: left;
         }
 
         input {
             width: 100%;
-            padding: 10px;
-            font-size: 1rem;
+            padding: 8px;
+            font-size: 0.9rem;
             border: none;
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            border-radius: 8px;
+            border-radius: 6px;
             outline: none;
         }
 
@@ -78,10 +88,10 @@
 
         input:focus {
             border: 1px solid #fff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
 
-        .login-btn {
+        .signup-btn {
             width: 100%;
             padding: 12px;
             font-size: 1rem;
@@ -90,54 +100,83 @@
             background: rgba(0, 123, 255, 0.6);
             border: none;
             cursor: pointer;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: 0.3s;
         }
 
-        .login-btn:hover {
+        .signup-btn:hover {
             background: rgba(0, 91, 187, 0.8);
         }
 
-        /* Signup link styling */
-        .signup-text {
-            margin-top: 15px;
-            font-size: 14px;
+        .login-text {
+            margin-top: 12px;
+            font-size: 12px;
             color: white;
         }
 
-        .signup-link {
+        .login-link {
             color: #FFD700;
             font-weight: bold;
             text-decoration: none;
             transition: 0.3s;
         }
 
-        .signup-link:hover {
+        .login-link:hover {
             text-decoration: underline;
             color: #FFA500;
         }
-
     </style>
 </head>
 
 <body>
     <div class="glass-container">
         <h1 class="title">COMPASS</h1>
-        <h2 class="subtitle">Navigate Your Future</h2>
-        <form action="/check_recruiter" method="POST">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <h2 class="subtitle">Recruiter Signup</h2>
+        <form action="/create_recruiter_acc" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
 
-            <button type="submit" class="login-btn">Login</button>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" placeholder="Enter company name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="position">Job Position</label>
+                <input type="text" id="position" name="position" placeholder="Enter your job position" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="about_compnay">About Company</label>
+                <input type="text" id="about_compnay" name="about_compnay" placeholder="Enter about comapany" required>
+            </div>
+
+            <button type="submit" class="signup-btn full-width">Sign Up</button>
         </form>
-
-        <p class="signup-text">
-            Don't have an account? <a href="{{ url_for('recruiter_signup') }}" class="signup-link">Sign up</a>
-        </p>
     </div>
 </body>
 
 </html>
+
