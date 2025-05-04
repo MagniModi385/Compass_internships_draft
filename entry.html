@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass: Navigate Your Future</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url(/static/i1.png);
+            background-size: cover;
+            background-position: center;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Frosted Glass Effect */
+        .glass-container {
+            width: 400px;
+            padding: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+
+        .title {
+            font-family: "Anton", sans-serif;
+            font-size: 60px;
+            color: #1520a6;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background: rgba(0, 123, 255, 0.6);
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .login-btn:hover {
+            background: rgba(0, 91, 187, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glass-container">
+        <h1 class="title">Compass</h1>
+        <h2 class="subtitle">Navigate Your Future</h2>
+        <a href="student_login" class="login-btn">Student</a>
+        <a href="recruiter_login" class="login-btn">Recruiter</a>
+    </div>
+</body>
+
+</html>
